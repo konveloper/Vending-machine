@@ -1,1 +1,119 @@
 @charset 'utf-8';
+
+body {
+  background-color: #eae8fe;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 28px;
+  padding-top: 247px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+}
+
+.title > img {
+  position: absolute;
+  width: 386px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container-vending-machine,
+.container-my-info {
+  flex-basis: 360px;
+  background-color: #fff;
+}
+
+/* 자판기 화면 */
+.container-vending-machine {
+  padding: 31px 27px 28px;
+}
+
+.container-vending-machine .list-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.container-vending-machine .list-item li {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.list-item .btn-item {
+  width: 100%;
+  padding: 11px 12px 9px;
+}
+
+.list-item .img-item {
+  width: 36px;
+  height: 65px;
+  margin: 0 auto;
+}
+
+.list-item .title-item {
+  display: block;
+  font-size: 9px;
+  text-align: center;
+  padding: 7px 0 7px 0;
+}
+
+.list-item .txt-price {
+  display: block;
+  font-size: 12px;
+  padding: 5px 15px;
+  background-color: #6327fe;
+  border-radius: 50px;
+  color: #fff;
+}
+
+/* 구입 관련 정보 */
+.container-vending-machine .container-buy {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.container-buy .info-balance,
+.container-buy .input-put,
+.container-buy .list-item-staged {
+  grid-column: 1/3;
+  border-radius: 5px;
+}
+
+.container-buy .btn-change,
+.container-buy .btn-put,
+.container-buy .btn-get {
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+}
+
+.container-buy .info-balance {
+  padding: 6px 10px;
+  background-color: #eae8fe;
+}
+
+.container-buy .txt-balance {
+  float: right;
+}
+
+.container-buy .input-put {
+  padding: 4px 0 6px 8px;
+  border: 1px solid #bdbdbd;
+}
+
+.container-buy .input-put::placeholder {
+  font-size: 13px;
+  color: #bdbdbd;
+}
+
+.container-buy .list-item-staged {
+  background-color: #eae8fe;
+}
