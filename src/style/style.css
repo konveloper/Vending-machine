@@ -22,24 +22,24 @@ body {
   transform: translateX(-50%);
 }
 
-.container-vending-machine,
-.container-my-info {
+.cont-vending-machine,
+.cont-myinfo {
   flex-basis: 360px;
-  background-color: #fff;
 }
 
 /* 자판기 화면 */
-.container-vending-machine {
+.cont-vending-machine {
+  background-color: #fff;
   padding: 31px 27px 28px;
 }
 
-.container-vending-machine .list-item {
+.cont-vending-machine .list-item {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
 }
 
-.container-vending-machine .list-item li {
+.cont-vending-machine .list-item li {
   position: relative;
   border-radius: 10px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
@@ -73,47 +73,98 @@ body {
 }
 
 /* 구입 관련 정보 */
-.container-vending-machine .container-buy {
+.cont-vending-machine .cont-buy {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
   margin-top: 20px;
 }
 
-.container-buy .info-balance,
-.container-buy .input-put,
-.container-buy .list-item-staged {
+.cont-buy .info-balance,
+.cont-buy .input-put,
+.cont-buy .list-item-staged {
   grid-column: 1/3;
   border-radius: 5px;
 }
 
-.container-buy .btn-change,
-.container-buy .btn-put,
-.container-buy .btn-get {
+.cont-buy .btn-change,
+.cont-buy .btn-put,
+.cont-buy .btn-get {
   border-radius: 5px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   font-size: 13px;
 }
 
-.container-buy .info-balance {
+.cont-buy .btn-get {
+  color: #fff;
+  background-color: #6327fe;
+}
+
+.cont-buy .info-balance {
   padding: 6px 10px;
   background-color: #eae8fe;
 }
 
-.container-buy .txt-balance {
+.cont-buy .txt-balance {
   float: right;
 }
 
-.container-buy .input-put {
+.cont-buy .input-put {
   padding: 4px 0 6px 8px;
   border: 1px solid #bdbdbd;
 }
 
-.container-buy .input-put::placeholder {
+.cont-buy .input-put::placeholder {
   font-size: 13px;
   color: #bdbdbd;
 }
 
-.container-buy .list-item-staged {
+.list-item-staged {
+  padding: 12px;
+  overflow-y: scroll;
   background-color: #eae8fe;
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+}
+
+/* 나의 정보 */
+/* 소지금 */
+.cont-myinfo .cont-mymoney {
+  padding: 9px 27px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.cont-mymoney .info-mymoney {
+  padding: 6px 10px;
+  background-color: #eae8fe;
+  border-radius: 5px;
+  line-height: 20px;
+}
+
+.cont-mymoney .txt-mymoney {
+  float: right;
+}
+
+.cont-myinfo .cont-myitem {
+  background-color: #fff;
+  padding: 25px 27px 26px;
+}
+
+.cont-myitem .title-myitem {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+.cont-myitem .list-item-staged {
+  height: 368px;
+}
+
+.cont-myitem .txt-total {
+  display: block;
+  text-align: right;
+  margin-top: 7px;
+  font-size: 12px;
 }
