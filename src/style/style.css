@@ -50,7 +50,13 @@ body {
   padding: 11px 12px 9px;
 }
 
+.list-item .btn-item:active {
+  outline: 3px solid #6327fe;
+  border-radius: 10px;
+}
+
 .list-item .img-item {
+  display: block;
   width: 36px;
   height: 65px;
   margin: 0 auto;
@@ -139,7 +145,6 @@ body {
   padding: 6px 10px;
   background-color: #eae8fe;
   border-radius: 5px;
-  line-height: 20px;
 }
 
 .cont-mymoney .txt-mymoney {
