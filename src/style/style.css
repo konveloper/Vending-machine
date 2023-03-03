@@ -126,11 +126,53 @@ body {
 }
 
 .list-item-staged {
+  height: 106px;
   padding: 12px;
   overflow-y: scroll;
   background-color: #eae8fe;
-  border-radius: 5px;
   border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+
+.list-item-staged li {
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.list-item-staged li + li {
+  margin-top: 6px;
+}
+
+.list-item-staged .img-item,
+.list-item-staged .txt-item {
+  float: left;
+}
+
+.list-item-staged .btn-staged {
+  width: 100%;
+  padding: 8px;
+}
+
+.list-item-staged .txt-item {
+  margin-left: 10px;
+  line-height: 32px;
+  font-size: 9px;
+}
+
+.list-item-staged .num-counter {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+
+.list-item-staged .img-item {
+  width: 18px;
+  height: 32px;
 }
 
 /* 나의 정보 */
