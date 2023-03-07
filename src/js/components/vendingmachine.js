@@ -5,7 +5,8 @@ class Vendingmachine {
     this.itemList = vendingMachine.querySelector('.list-item');
     this.inputCostEl = vendingMachine.querySelector('.input-put');
     this.btnPut = vendingMachine.querySelector('.btn-put');
-    this.btnReturn = vendingMachine.querySelector('.btn-get');
+    this.btnReturn = vendingMachine.querySelector('.btn-return');
+    this.btnGet = vendingMachine.querySelector('.btn-get');
     this.stagedList = vendingMachine.querySelector('.list-item-staged');
 
     const myInfo = document.querySelector('.cont-myinfo');
@@ -23,6 +24,7 @@ class Vendingmachine {
       const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(',', ''));
       const balanceVal = parseInt(this.balance.textContent.replaceAll(',', ''));
 
+      // 1. 입금 버튼 기능
       if (inputCost) {
         // 입금액이 소지금보다 작은 경우
         if (inputCost <= myMoneyVal && inputCost > 0) {
@@ -37,6 +39,18 @@ class Vendingmachine {
           alert('소지금이 부족합니다.');
         }
         this.inputCostEl.value = null;
+      }
+    });
+
+    // 2. 거스름돈 반환 버튼 기능
+    this.btnReturn.addEventListener('click', (event) => {
+      const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(',', ''));
+      const balanceVal = parseInt(this.balance.textContent.replaceAll(',', ''));
+
+      if (balanceVal) {
+        this.myMoney.textContent =
+          new Intl.NumberFormat().format(balanceVal + myMoneyVal) + ' 원';
+        this.balance.textContent = '';
       }
     });
   }
