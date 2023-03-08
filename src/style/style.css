@@ -16,6 +16,7 @@ body {
   padding-top: 247px;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
+  margin-bottom: 100px;
 }
 
 .title > img {
@@ -34,7 +35,7 @@ body {
 /* 자판기 화면 */
 .cont-vending-machine {
   background-color: #fff;
-  padding: 31px 27px 28px;
+  padding: 24px;
 }
 
 .cont-vending-machine .list-item {
@@ -230,6 +231,6 @@ body {
     width: 166px;
   }
   .cont-myinfo {
-    margin-bottom: 43px;
+    margin-bottom: 40px;
   }
 }
