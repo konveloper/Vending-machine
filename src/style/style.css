@@ -50,6 +50,20 @@ body {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
+.list-item li.sold-out::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 10px;
+  background: no-repeat center/60px 46px url(../images/Sold-out.png)
+    rgba(0, 0, 0, 0.8);
+}
+
 .list-item .btn-item {
   width: 100%;
   padding: 11px 12px 9px;

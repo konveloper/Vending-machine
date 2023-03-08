@@ -18,6 +18,21 @@ class Vendingmachine {
     this.bindEvents();
   }
 
+  // 선택한 음료수 목록
+  stagedItemGenerator(target) {
+    const stagedItem = document.createElement('li');
+    stagedItem.dataset.item = target.dataset.item;
+    stagedItem.dataset.price = target.dataset.price;
+    stagedItem.innerHTML = `
+<button type="button" class="btn-staged">
+        <img src="./src/images/${target.dataset.img}" alt="" class="img-item">
+        <strong class="txt-item">${target.dataset.item}</strong>
+        <span class="num-counter">1</span>
+        </button>
+    `;
+    this.stagedList.appendChild(stagedItem);
+  }
+
   bindEvents() {
     this.btnPut.addEventListener('click', (event) => {
       const inputCost = parseInt(this.inputCostEl.value);
@@ -55,6 +70,52 @@ class Vendingmachine {
     });
 
     // 3. 자판기 메뉴 기능
+    const btnsItem = this.itemList.querySelectorAll('button');
+
+    btnsItem.forEach((item) => {
+      item.addEventListener('click', (event) => {
+        const targetEl = event.currentTarget;
+        const balanceVal = parseInt(
+          this.balance.textContent.replaceAll(',', '')
+        );
+        let isStaged = false; // 이미 선택되었는지 여부
+        const targetElPrice = parseInt(targetEl.dataset.price);
+        const stagedListItem = this.stagedList.querySelectorAll('li');
+
+        // 입금 금액이 음료수 값보다 많거나 같은 경우
+        if (balanceVal >= targetElPrice) {
+          this.balance.textContent =
+            new Intl.NumberFormat().format(balanceVal - targetElPrice) + '원';
+
+          // 선택한 음료수가 이미 선택된 음료수인지 탐색
+          for (const item of stagedListItem) {
+            // 내가 선택한 음료수와 내가 담은 음료수가 같은 경우
+            if (item.dataset.item === targetEl.dataset.item) {
+              item.querySelector('.num-counter').textContent++;
+              isStaged = true;
+              break;
+            }
+          }
+          // 음료수를 처음 선택한 경우
+          if (!isStaged) {
+            this.stagedItemGenerator(targetEl);
+          }
+          // 음료의 재고 갯수를 줄인다
+          targetEl.dataset.count--;
+
+          // 재고가 모두 소진된 경우 품절 표시
+          if (parseInt(targetEl.dataset.count) === 0) {
+            targetEl.parentElement.classList.add('sold-out');
+            const warning = document.createElement('em');
+            warning.textContent = '해당 상품은 품절입니다.';
+            warning.classList.add('ir');
+            targetEl.parentElement.insertBefore(warning, targetEl);
+          }
+        } else {
+          alert('잔액이 부족합니다.');
+        }
+      });
+    });
   }
 }
 
