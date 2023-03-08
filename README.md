@@ -1,5 +1,5 @@
 # 📱 나만의 자판기 📱<br>
-🔗 [구현 페이지](https://github.com/konveloper/Vending-machine/index.html)
+🔗 [구현 페이지](https://konveloper.github.io/Vending-machine/index.html)
 * 소지금을 이용해 원하는 만큼 돈을 입금하여 원하는 아이템을 뽑는 웹 페이지입니다.
 
 ## 기능 명세
