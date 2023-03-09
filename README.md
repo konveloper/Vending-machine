@@ -1,6 +1,7 @@
-# 📱 나만의 자판기 📱<br>
+# 📱 나만의 자판기(Vanila JavaScript)📱<br>
 🔗 [구현 페이지](https://konveloper.github.io/Vending-machine/index.html)
 * 소지금을 이용해 원하는 만큼 돈을 입금하여 원하는 아이템을 뽑는 웹 페이지입니다.
+<img width="1448" alt="스크린샷 2023-03-09 오후 10 49 41" src="https://user-images.githubusercontent.com/109451148/224046191-aee83ccb-5f86-4231-a172-0c85f9fab996.png">
 
 ## 기능 명세
 1. 판매할 음료에 대한 데이터는 따로 분리되어 있어야 합니다. (혹은 API로 받아야 합니다.)
@@ -25,6 +26,10 @@
 4. 획득 버튼 기능<br>
 획득 버튼을 누르면 선택한 음료수 목록이 획득한 음료 목록으로 이동합니다.<br>
 획득한 음료의 금액을 모두 합하여 총금액을 업데이트 합니다.<br>
+## 구현 화면
+<img width="1470" alt="스크린샷 2023-03-09 오후 10 51 04" src="https://user-images.githubusercontent.com/109451148/224046348-49f4e59e-62af-481c-bf0f-56970b6de4c6.png"><img width="1468" alt="스크린샷 2023-03-09 오후 10 51 50" src="https://user-images.githubusercontent.com/109451148/224046358-e815cdb4-636a-4b6a-8b70-213574c3bd69.png">
+
+
 
 ## 특징
 * 시맨틱한 태그를 사용하였습니다.
